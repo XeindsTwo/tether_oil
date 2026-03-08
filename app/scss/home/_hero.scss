@@ -7,7 +7,7 @@
 
 .hero {
   @include bg;
-  background-image: url("../../images/home.png");
+  background-image: url("../images/home.png");
   position: relative;
   flex: 1;
   display: flex;

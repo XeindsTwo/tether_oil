@@ -1,18 +1,37 @@
 .reserve {
   padding: 80px 0;
   background-color: #05070b;
+  @include r($sm) {
+    padding: 60px 0;
+  }
 
   &__top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 24px;
+    @include r($tablet) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 22px;
+      margin-bottom: 40px;
+    }
+    @include r($sm) {
+      align-items: center;
+      text-align: center;
+      margin-bottom: 32px;
+    }
   }
 
   &__tags {
     display: flex;
     align-items: center;
     gap: 12px;
+
+    @include r($sm) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 
   &__tag {
@@ -50,6 +69,10 @@
     &:focus {
       outline-color: $white;
     }
+
+    @include r($sm) {
+      align-self: center;
+    }
   }
 
   &__title {
@@ -60,15 +83,50 @@
     font-size: 44px;
     font-weight: 700;
     color: $white;
+    @include r($desktop) {
+      font-size: 40px;
+    }
+    @include r($tablet) {
+      font-size: 36px;
+    }
+    @include r($sm) {
+      display: inline-block;
+      font-size: 30px;
+      text-align: center;
+      justify-content: center;
+      width: 100%;
+    }
+    @include r($phone) {
+      font-size: 26px;
+    }
 
     &-icon {
       margin-right: -3px;
+      @include r($desktop) {
+        width: 41px;
+        height: auto;
+      }
+      @include r($tablet) {
+        width: 38px;
+      }
+      @include r($sm) {
+        width: 36px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 6px;
+        margin-right: 4px;
+      }
+      @include r($phone) {
+        width: 33px;
+      }
     }
-  }
 
-  &__title-token {
-    font-size: 40px;
-    font-weight: 700;
+    br {
+      display: none;
+      @media (max-width: 560px) {
+        display: block;
+      }
+    }
   }
 
   &__description {
@@ -76,12 +134,36 @@
     max-width: 606px;
     font-size: 18px;
     letter-spacing: -0.18px;
+    @include r($desktop) {
+      margin-bottom: 80px;
+    }
+    @include r($lg) {
+      margin-bottom: 60px;
+    }
+    @include r($tablet) {
+      margin-bottom: 50px;
+    }
+    @include r($sm) {
+      margin-bottom: 40px;
+      max-width: 480px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 17px;
+    }
   }
 
   &__items {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 16px;
+    @include r($desktop) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @include r($sm) {
+      grid-template-columns: minmax(0, 480px);
+      justify-content: center;
+    }
   }
 
   &__item {
@@ -105,8 +187,12 @@
     margin-bottom: 18px;
     color: $white;
 
-    & .share {
+    .share {
       color: rgba($white, .64);
+    }
+
+    @include r($phone) {
+      font-size: 16px;
     }
   }
 
@@ -117,6 +203,12 @@
     line-height: 1.2;
     font-weight: 600;
     color: $white;
+    @include r($lg) {
+      font-size: 22px;
+    }
+    @include r($phone) {
+      font-size: 20px;
+    }
   }
 
   &__item-description {
@@ -132,5 +224,9 @@
     letter-spacing: 0.16px;
     text-transform: uppercase;
     color: rgba($white, .8);
+
+    @include r($tablet) {
+      font-size: 14px;
+    }
   }
 }
