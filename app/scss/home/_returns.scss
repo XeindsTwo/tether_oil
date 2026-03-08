@@ -1,0 +1,83 @@
+.returns {
+  @include bg;
+  background-image: url("../../images/returns.png");
+  padding: 60px 0;
+  background-color: #05070b;
+
+  &__title {
+    margin-bottom: 32px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    span {
+      color: $white;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding: 14px 16px;
+    border-radius: 6px;
+    background-color: rgba($black200, .32);
+    backdrop-filter: blur(32px);
+    display: flex;
+    flex-direction: column;
+
+    &-icon {
+      margin-bottom: 18px;
+    }
+
+    &-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: $white;
+      line-height: 1.1;
+      letter-spacing: -0.48px;
+      margin-bottom: 16px;
+    }
+
+    &-description {
+      margin-bottom: 18px;
+
+      &.short {
+        max-width: 340px;
+      }
+
+      &.short--two {
+        max-width: 310px;
+      }
+    }
+
+    &-badge {
+      margin-top: auto;
+      color: $white;
+      max-width: max-content;
+      font-size: 18px;
+      padding: 6px 8px;
+      line-height: 1.1;
+      border-radius: 8px;
+      background-color: rgba($white, .12);
+    }
+  }
+
+  &__item-badge-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+}

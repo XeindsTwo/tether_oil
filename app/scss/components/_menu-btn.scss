@@ -1,0 +1,42 @@
+.menu-btn {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 50%;
+  background: transparent;
+  z-index: 1000;
+
+  @include r($desktop) {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 6px;
+  }
+
+  .line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    width: 38px;
+    height: 3px;
+    background: $black;
+    border-radius: 1px;
+  }
+
+  .top {
+    top: 5px;
+  }
+
+  .middle {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .bottom {
+    bottom: 5px;
+  }
+}

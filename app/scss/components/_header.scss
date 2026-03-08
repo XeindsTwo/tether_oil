@@ -1,0 +1,59 @@
+.header {
+  position: absolute;
+  top: 34px;
+  z-index: 2;
+  width: 100%;
+
+  &__inner {
+    @include flex-between-center-gap(30);
+    font-size: 18px;
+    letter-spacing: -0.18px;
+  }
+
+  &__logo, &__nav {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 300px;
+    width: 100%;
+  }
+
+  &__logo {
+    justify-content: flex-start;
+
+    &-img {
+      transition: opacity .3s;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+
+  &__info {
+    font-weight: 600;
+    color: $white;
+
+    span {
+      color: rgba($white, .64);
+    }
+  }
+
+  &__nav {
+    @include flex-align-center(15);
+  }
+
+  &__link {
+    transition: color .3s, background-color .3s, border .3s, outline .3s;
+    border-radius: 4px;
+    outline-offset: 3px;
+    outline: 1px solid transparent;
+
+    &:hover {
+      color: $white;
+    }
+
+    &:focus {
+      outline-color: $white;
+    }
+  }
+}
