@@ -1,0 +1,178 @@
+.faq {
+  padding: 52px 0 80px;
+
+  @include r($tablet) {
+    padding: 40px 0 60px;
+  }
+
+  @include r($sm) {
+    padding: 32px 0 48px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+
+    @include r($sm) {
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.48px;
+    text-transform: uppercase;
+    color: rgba($white, 0.6);
+    @include r($tablet) {
+      font-size: 22px;
+    }
+  }
+
+  &__link {
+    font-size: 14px;
+    color: rgba($white, 0.5);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+    white-space: nowrap;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &__list {
+    @include flex-column(16);
+    @include r($tablet) {
+      gap: 10px;
+    }
+    @include r($sm) {
+      gap: 8px;
+    }
+    @include r($phone) {
+      margin: 0 -5px;
+    }
+  }
+
+  &__item {
+    background-color: $black200;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: background-color .3s;
+
+    &:hover {
+      background-color: $black300;
+    }
+  }
+
+  &__question {
+    @include flex-between-center-gap(30);
+    text-align: left;
+    width: 100%;
+    gap: 16px;
+    padding: 20px 18px;
+    font-size: 22px;
+    font-weight: 600;
+    color: $white;
+    letter-spacing: -0.44px;
+    outline: 2px solid transparent;
+    outline-offset: -2px;
+    transition: outline-color 0.2s ease;
+
+    &:focus-visible {
+      outline-color: rgba($white, 0.4);
+    }
+
+    @include r($lg) {
+      font-size: 20px;
+    }
+    @include r($tablet) {
+      font-size: 18px;
+      padding: 18px 16px;
+    }
+    @include r($sm) {
+      padding: 16px 14px;
+      gap: 12px;
+    }
+    @include r($phone) {
+      font-size: 17px;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+
+    @include r($sm) {
+      width: 16px;
+      height: 16px;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: $white;
+      border-radius: 2px;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 2px;
+      transition: transform 0.25s ease;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    .faq__item--open & {
+      &::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+
+  &__answer {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s ease;
+  }
+
+  &__answer-text {
+    padding: 0 18px 20px;
+    font-size: 16px;
+    letter-spacing: -0.16px;
+    max-width: 890px;
+    width: 100%;
+
+    @include r($tablet) {
+      padding: 0 16px 18px;
+    }
+
+    @include r($sm) {
+      padding: 0 14px 16px;
+      font-size: 15px;
+    }
+
+    &.long {
+      max-width: 960px;
+    }
+  }
+}

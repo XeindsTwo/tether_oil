@@ -4,9 +4,9 @@
 @import 'basic/mixin';
 @import 'basic/global';
 
-@import "components/header";
 @import "components/btn";
-@import "components/title-section";
+@import "components/header";
+@import "components/footer";
 
 @import "home/hero";
 @import "home/reserve";
@@ -14,3 +14,4 @@
 @import "home/mechanics";
 @import "home/industry";
 @import "home/partners";
+@import "home/faq";
