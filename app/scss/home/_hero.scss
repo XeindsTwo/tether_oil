@@ -7,7 +7,7 @@
 
 .hero {
   @include bg;
-  background-image: url("../images/home.png");
+  background-image: url("../images/home.webp");
   position: relative;
   flex: 1;
   display: flex;
@@ -21,7 +21,7 @@
   @include r($tablet) {
     padding-top: 120px;
     padding-bottom: 40px;
-    background-image: url("../images/home-mobile.png");
+    background-image: url("../images/home-mobile.webp");
   }
   @include r($phone) {
     padding-bottom: 32px;
@@ -186,12 +186,15 @@
     color: $white;
     @include r($lg) {
       font-size: 22px;
+      letter-spacing: -0.4px;
     }
     @include r($tablet) {
       font-size: 20px;
+      letter-spacing: -0.2px;
     }
     @include r($phone) {
       font-size: 20px;
+      letter-spacing: -0.1px;
     }
   }
 }

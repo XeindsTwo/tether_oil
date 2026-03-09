@@ -12,6 +12,9 @@
   line-height: 1.4;
   color: rgba($white, .64);
   overflow-x: hidden;
+  @include r($sm) {
+    letter-spacing: 0;
+  }
 }
 
 .container {

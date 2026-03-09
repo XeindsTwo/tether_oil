@@ -1,6 +1,6 @@
 .returns {
   @include bg;
-  background-image: url("../images/returns.png");
+  background-image: url("../images/returns.webp");
   padding: 60px 0;
   background-color: #05070b;
   @include r($sm) {
@@ -88,10 +88,12 @@
 
       @include r($tablet) {
         font-size: 22px;
+        letter-spacing: -0.24px;
       }
 
       @include r($phone) {
         font-size: 20px;
+        letter-spacing: 0;
       }
     }
 
@@ -118,10 +120,18 @@
       color: $white;
       max-width: max-content;
       font-size: 18px;
+      font-weight: 600;
       padding: 6px 8px;
       line-height: 1.1;
+      letter-spacing: 0;
       border-radius: 8px;
       background-color: rgba($white, .12);
+      @include r($tablet) {
+        font-size: 16px;
+      }
+      @media (max-width: 610px) {
+        font-size: 14px;
+      }
     }
   }
 }

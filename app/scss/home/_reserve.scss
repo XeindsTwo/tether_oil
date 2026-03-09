@@ -184,9 +184,11 @@
     color: $white;
     @include r($lg) {
       font-size: 22px;
+      letter-spacing: -0.32px;
     }
     @include r($phone) {
       font-size: 20px;
+      letter-spacing: -0.12px;
     }
   }
 

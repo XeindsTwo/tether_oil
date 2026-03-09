@@ -1,0 +1,145 @@
+.industry {
+  margin-bottom: 50px;
+  padding: 40px 0 20px;
+
+  &__inner {
+    position: relative;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    min-height: 520px;
+    @include r($desktop) {
+      min-height: 460px;
+    }
+    @include r($tablet) {
+      min-height: 370px;
+    }
+  }
+
+  &__left {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.07;
+    letter-spacing: -0.96px;
+    color: $white;
+    max-width: 460px;
+    margin-bottom: 20px;
+    @include r($desktop) {
+      font-size: 44px;
+    }
+    @include r($lg) {
+      font-size: 40px;
+      max-width: 410px;
+    }
+    @include r($tablet) {
+      font-size: 32px;
+      max-width: 330px;
+      margin-bottom: 16px;
+    }
+    @include r($sm) {
+      font-size: 28px;
+      letter-spacing: -0.56px;
+    }
+
+    @include r($phone) {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    letter-spacing: -0.18px;
+    max-width: 420px;
+    margin-bottom: 60px;
+    @include r($tablet) {
+      max-width: 390px;
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+    @include r($sm) {
+      font-size: 15px;
+    }
+  }
+
+  &__stats {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+  }
+
+  &__stat {
+    @include flex-column(6);
+
+    @media (max-width: 500px) {
+      flex-shrink: 0;
+    }
+
+    &:not(:last-child) {
+      padding-right: 28px;
+      border-right: 1px solid rgba($white, .24);
+    }
+  }
+
+  &__stat-label {
+    font-size: 18px;
+    letter-spacing: -0.18px;
+    color: rgba($white, .64);
+
+    @include r($lg) {
+      font-size: 16px;
+    }
+
+    @include r($phone) {
+      font-size: 15px;
+    }
+  }
+
+  &__stat-value {
+    font-size: 24px;
+    letter-spacing: -0.48px;
+    font-weight: 600;
+    color: $white;
+    @include r($lg) {
+      font-size: 22px;
+      letter-spacing: -0.4px;
+    }
+    @include r($tablet) {
+      font-size: 20px;
+      letter-spacing: -0.2px;
+    }
+    @include r($phone) {
+      font-size: 20px;
+      letter-spacing: -0.1px;
+    }
+  }
+
+  &__image {
+    @include objectCoverBg;
+    position: absolute;
+    top: -176px;
+    right: -50px;
+    z-index: -1;
+    @include r($desktop) {
+      width: 790px;
+      height: auto;
+      top: -166px;
+      right: -20px;
+    }
+    @include r($tablet) {
+      top: -130px;
+    }
+    @media (max-width: 660px) {
+      top: -70px;
+    }
+  }
+}

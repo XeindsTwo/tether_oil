@@ -1,0 +1,124 @@
+.partners {
+  &__inner {
+    padding: 64px 0;
+    text-align: center;
+    border-top: 1px solid rgba($white, 0.1);
+    border-bottom: 1px solid rgba($white, 0.1);
+    @include r($lg) {
+      padding: 48px 0;
+    }
+    @include r($tablet) {
+      padding: 40px 0;
+    }
+  }
+
+  &__title {
+    color: rgba($white, 0.6);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.24px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+    @include r($lg) {
+      font-size: 22px;
+      margin-bottom: 24px;
+    }
+    @include r($tablet) {
+      font-size: 20px;
+    }
+    @include r($sm) {
+      font-size: 18px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 72px;
+    @include r($lg) {
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 52px;
+    }
+    @include r($tablet) {
+      margin-bottom: 48px;
+    }
+    @media (max-width: 560px) {
+      grid-template-columns: repeat(1, 1fr);
+      max-width: 370px;
+      margin: 0 auto 48px;
+    }
+
+    &--production {
+      margin-bottom: 0;
+      gap: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include r($lg) {
+        gap: 40px;
+      }
+      @include r($tablet) {
+        max-width: 520px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+      }
+      @include r($sm) {
+        gap: 28px 22px;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  &__item {
+    background-color: $black200;
+    padding: 20px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    @include r($tablet) {
+      padding: 16px 20px;
+      gap: 14px;
+    }
+
+    &--transparent {
+      background-color: transparent;
+      padding: 0;
+
+      .partners__logo {
+        @include r($lg) {
+          width: 80%;
+        }
+        @include r($tablet) {
+          width: 80%;
+        }
+      }
+    }
+  }
+
+  &__logo-wrap {
+    @include flex-center;
+    max-width: 242px;
+    width: 100%;
+    min-height: 96px;
+    @include r($tablet) {
+      min-height: 72px;
+    }
+  }
+
+  &__logo {
+    @include objectCoverBg;
+  }
+
+  &__desc {
+    font-size: 18px;
+    margin-top: auto;
+    letter-spacing: -0.18px;
+    @include r($tablet) {
+      font-size: 16px;
+    }
+  }
+}

@@ -171,9 +171,11 @@
     color: $white;
     @media (max-width: 1300px) {
       font-size: 22px;
+      letter-spacing: -0.24px;
     }
     @media (max-width: 560px) {
       font-size: 20px;
+      letter-spacing: -0.16px;
     }
 
     &.bottom-20 {
@@ -209,6 +211,7 @@
     padding: 6px 8px;
     border-radius: 8px;
     margin-top: auto;
+    font-weight: 600;
     font-size: 18px;
     color: $white;
     background-color: rgba($white, .12);
