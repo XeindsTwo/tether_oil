@@ -54,27 +54,6 @@
     }
   }
 
-  &__link {
-    line-height: 1.1;
-    border-bottom: 1px solid rgba($white, .64);
-    border-radius: 3px;
-    outline-offset: 4px;
-    outline: 1px solid transparent;
-    transition: color .4s, border .4s, background-color .4s, outline .3s;
-
-    &:hover {
-      color: $white;
-    }
-
-    &:focus {
-      outline-color: $white;
-    }
-
-    @include r($sm) {
-      align-self: center;
-    }
-  }
-
   &__title {
     display: inline-flex;
     align-items: center;
