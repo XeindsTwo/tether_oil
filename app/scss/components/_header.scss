@@ -3,11 +3,17 @@
   top: 34px;
   z-index: 2;
   width: 100%;
+  @include r($tablet) {
+    top: 20px;
+  }
 
   &__inner {
     @include flex-between-center-gap(30);
     font-size: 18px;
     letter-spacing: -0.18px;
+    @include r($tablet) {
+      font-size: 16px;
+    }
   }
 
   &__logo, &__nav {
@@ -15,6 +21,9 @@
     justify-content: flex-end;
     max-width: 300px;
     width: 100%;
+    @include r($lg) {
+      max-width: 200px;
+    }
   }
 
   &__logo {
@@ -22,6 +31,12 @@
 
     &-img {
       transition: opacity .3s;
+      @include r($sm) {
+        width: 120px;
+      }
+      @include r($phone) {
+        width: 114px;
+      }
 
       &:hover {
         opacity: .8;
@@ -32,6 +47,9 @@
   &__info {
     font-weight: 600;
     color: $white;
+    @include r($tablet) {
+      display: none;
+    }
 
     span {
       color: rgba($white, .64);
@@ -54,6 +72,12 @@
 
     &:focus {
       outline-color: $white;
+    }
+
+    &:nth-child(1), &:nth-child(2) {
+      @include r($lg) {
+        display: none;
+      }
     }
   }
 }
