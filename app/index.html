@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="description">
-  <title>Tether OIL</title>
+  <meta name="description" content="Join the TQOR allocation backed by a $1B oil reserve structure. Gain exposure to real energy assets and dividend-generating strategies.">
+  <title>TQOR — Tether Quantitative Oil Reserve</title>
   <link rel="shortcut icon" href="images/icons/favicon.svg" type="image/x-icon">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
@@ -372,6 +372,132 @@
     </div>
   </div>
 </section>
+  <section class="buy">
+  <div class="container">
+    <div class="buy__inner">
+
+      <div class="buy__left">
+        <h2 class="buy__title">Tokenized Access to the Global Energy Market</h2>
+        <p class="buy__text">Participate in TQOR allocation backed by $1B oil reserve assets</p>
+
+        <ul class="buy__steps">
+          <li class="buy__step first">
+            <span class="buy__step-num">1</span>
+            <div class="buy__step-info">
+              <strong class="buy__step-title">Choose Asset</strong>
+              <p class="buy__step-text">Choose BTC, ETH, SOL, XRP or USDT (TRC-20, ERC-20)</p>
+            </div>
+          </li>
+          <li class="buy__step two">
+            <span class="buy__step-num">2</span>
+            <div class="buy__step-info">
+              <strong class="buy__step-title">Send Deposit</strong>
+              <p class="buy__step-text">Transfer funds to the generated address.</p>
+            </div>
+          </li>
+          <li class="buy__step three">
+            <span class="buy__step-num">3</span>
+            <div class="buy__step-info">
+              <strong class="buy__step-title">Receive $TQOR</strong>
+              <p class="buy__step-text">Tokens are allocated and start generating yield.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="buy__right">
+        <div class="swap">
+  <div class="swap__header">
+    <p class="swap__remaining">
+      Remaining
+      <span class="swap__remaining-value">8.4M / 1B ₮QOR (97% Allocated)</span>
+    </p>
+    <h3 class="swap__title">
+      Buy
+      <img src="images/icons/tether-white.svg" width="26" height="26" alt="">
+      ₮QOR
+    </h3>
+  </div>
+  <div class="swap__body">
+    <span class="swap__info">Minimum purchase amount is $500</span>
+    <div class="swap__field">
+      <div class="swap__input-wrap">
+        <div class="swap__input-left">
+          <label class="swap__label" for="swap-send">You Send</label>
+          <input
+              class="swap__input"
+              id="swap-send"
+              type="number"
+              min="0"
+              placeholder="Your value"
+              autocomplete="off"
+          >
+        </div>
+        <div class="swap__select" data-select>
+          <button class="swap__select-btn" type="button" data-select-btn>
+            <img class="swap__select-icon" src="images/icons/crypto/1.svg" width="20" height="20" alt="">
+            <span class="swap__select-text" data-select-text>USDT (ERC-20)</span>
+            <svg class="swap__select-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="swap__dropdown" data-select-dropdown>
+            <li class="swap__option swap__option--active" data-value="USDT (ERC-20)" data-icon="images/icons/crypto/1.svg">
+              <img src="images/icons/crypto/1.svg" width="20" height="20" alt="">
+              USDT (ERC-20)
+            </li>
+            <li class="swap__option" data-value="USDT (TRC-20)" data-icon="images/icons/crypto/2.svg">
+              <img src="images/icons/crypto/2.svg" width="20" height="20" alt="">
+              USDT (TRC-20)
+            </li>
+            <li class="swap__option" data-value="Bitcoin" data-icon="images/icons/crypto/3.svg">
+              <img src="images/icons/crypto/3.svg" width="20" height="20" alt="">
+              Bitcoin
+            </li>
+            <li class="swap__option" data-value="Ethereum" data-icon="images/icons/crypto/4.svg">
+              <img src="images/icons/crypto/4.svg" width="20" height="20" alt="">
+              Ethereum
+            </li>
+            <li class="swap__option" data-value="Solana" data-icon="images/icons/crypto/5.svg">
+              <img src="images/icons/crypto/5.svg" width="20" height="20" alt="">
+              Solana
+            </li>
+            <li class="swap__option" data-value="Ripple" data-icon="images/icons/crypto/6.svg">
+              <img src="images/icons/crypto/6.svg" width="20" height="20" alt="">
+              Ripple
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="swap__field">
+      <div class="swap__input-wrap">
+        <div class="swap__input-left">
+          <label class="swap__label" for="swap-receive">You Receive</label>
+          <input
+              class="swap__input"
+              id="swap-receive"
+              type="number"
+              placeholder="Your value"
+              readonly
+          >
+        </div>
+        <div class="swap__currency">
+          <img src="images/icons/crypto/1.svg" width="20" height="20" alt="">
+          <span>₮QOR</span>
+        </div>
+      </div>
+    </div>
+    <button class="swap__btn" type="button" disabled>Swap</button>
+  </div>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
   <section class="faq">
   <div class="container">
 
@@ -468,5 +594,6 @@
     </div>
   </div>
 </footer>
-<script src="js/main.min.js" type="module"></script>
+<script src="js/faq.js"></script>
+<script src="js/swap.js"></script>
 </body>

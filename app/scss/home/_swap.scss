@@ -1,0 +1,304 @@
+.swap {
+  background-color: $black400;
+  border-radius: 12px;
+  padding: 20px;
+  @include r($phone) {
+    padding: 20px 13px;
+    margin: 0 -6px;
+  }
+
+  &__remaining {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.18px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    color: rgba($white, .8);
+    @media (max-width: 1100px) {
+      font-size: 16px;
+    }
+    @include r($lg) {
+      text-align: center;
+    }
+    @include r($phone) {
+      font-size: 15px;
+      max-width: 220px;
+      margin: 0 auto 16px;
+    }
+
+    &-value {
+      color: $white;
+    }
+  }
+
+  &__title {
+    @include flex-align-center(8);
+    font-size: 26px;
+    font-weight: 700;
+    color: $white;
+    letter-spacing: -0.56px;
+    margin-bottom: 120px;
+    @media (max-width: 1100px) {
+      font-size: 24px;
+      letter-spacing: -0.4px;
+    }
+    @include r($lg) {
+      justify-content: center;
+      margin-bottom: 60px;
+    }
+
+    img {
+      @include r($sm) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 20px;
+    @media (max-width: 1100px) {
+      font-size: 18px;
+    }
+    @include r($sm) {
+      font-size: 16px;
+    }
+    @include r($phone) {
+      font-size: 15px;
+    }
+  }
+
+  &__info {
+    display: block;
+    text-align: right;
+    font-size: 16px;
+    letter-spacing: -0.32px;
+    margin-bottom: -4px;
+    @include r($sm) {
+      font-size: 14px;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__input-wrap {
+    display: flex;
+    align-items: stretch;
+    border-radius: 8px;
+    border: 1px solid rgba($white, 0.08);
+    position: relative;
+    transition: border-color 0.3s;
+
+    &:focus-within {
+      border-color: rgba($white, 0.24);
+    }
+  }
+
+  &__input-left {
+    @include flex-column(10);
+    flex: 1;
+    min-width: 0;
+    padding: 16px 16px 12px;
+  }
+
+  &__label {
+    font-size: 14px;
+    line-height: 1.07;
+    font-weight: 600;
+    letter-spacing: 0.16px;
+    text-transform: uppercase;
+    color: rgba($white, 0.4);
+    @include r($phone) {
+      font-size: 13px;
+    }
+  }
+
+  &__input {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    line-height: 1.07;
+    color: $white;
+    letter-spacing: -0.18px;
+    width: 100%;
+    @include r($sm) {
+      font-size: 16px;
+    }
+    @include r($phone) {
+      font-size: 15px;
+    }
+
+    &::placeholder {
+      color: rgba($white, 0.25);
+    }
+
+    &[readonly] {
+      cursor: default;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  }
+
+  &__currency,
+  &__select-btn {
+    letter-spacing: -0.4px;
+    font-weight: 600;
+    color: $white;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity .3s;
+  }
+
+  &__currency {
+    @include flex-align-center(6);
+    padding: 0 16px 0 12px;
+  }
+
+  &__select {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    &-btn {
+      @include flex-align-center(6);
+      padding: 0 16px 0 12px;
+      height: 100%;
+      font-weight: 600;
+      white-space: nowrap;
+      outline: none;
+      @include r($phone) {
+        padding-left: 0;
+        padding-right: 12px;
+      }
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+
+    &-arrow {
+      margin-left: -2px;
+      color: $white;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+
+      .swap__select--open & {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 190px;
+    background-color: $black400;
+    border: 1px solid rgba($white, 0.06);
+    border-radius: 4px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    @include r($sm) {
+      min-width: 180px;
+    }
+
+    .swap__select--open & {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+  &__option {
+    @include flex-align-center(7);
+    padding: 10px 12px;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgba($white, 0.8);
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s;
+    @include r($sm) {
+      font-size: 16px;
+    }
+    @include r($phone) {
+      padding: 12px 12px;
+    }
+
+    &:hover {
+      background-color: rgba($white, 0.06);
+      color: $white;
+    }
+
+    img {
+      opacity: 0.8;
+      transition: opacity .25s;
+      @include r($sm) {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    &--active {
+      color: $white;
+      background-color: rgba($white, 0.06);
+
+      img {
+        opacity: 1;
+      }
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba($white, 0.06);
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    padding: 18px;
+    line-height: 1;
+    background-color: $white;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    color: $black100;
+    cursor: pointer;
+    letter-spacing: -0.4px;
+    transition: background-color 0.3s, opacity 0.3s, color .3s;
+
+    &:hover:not(:disabled) {
+      background-color: rgba($white, 0.8);
+    }
+
+    &:focus-visible:not(:disabled) {
+      background-color: transparent;
+      border-color: $white;
+      color: $white;
+    }
+
+    &:disabled {
+      background-color: rgba($white, .24);
+      cursor: not-allowed;
+      color: #000;
+    }
+  }
+}

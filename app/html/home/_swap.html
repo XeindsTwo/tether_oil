@@ -1,0 +1,85 @@
+<div class="swap">
+  <div class="swap__header">
+    <p class="swap__remaining">
+      Remaining
+      <span class="swap__remaining-value">8.4M / 1B ₮QOR (97% Allocated)</span>
+    </p>
+    <h3 class="swap__title">
+      Buy
+      <img src="images/icons/tether-white.svg" width="26" height="26" alt="">
+      ₮QOR
+    </h3>
+  </div>
+  <div class="swap__body">
+    <span class="swap__info">Minimum purchase amount is $500</span>
+    <div class="swap__field">
+      <div class="swap__input-wrap">
+        <div class="swap__input-left">
+          <label class="swap__label" for="swap-send">You Send</label>
+          <input
+              class="swap__input"
+              id="swap-send"
+              type="number"
+              min="0"
+              placeholder="Your value"
+              autocomplete="off"
+          >
+        </div>
+        <div class="swap__select" data-select>
+          <button class="swap__select-btn" type="button" data-select-btn>
+            <img class="swap__select-icon" src="images/icons/crypto/1.svg" width="20" height="20" alt="">
+            <span class="swap__select-text" data-select-text>USDT (ERC-20)</span>
+            <svg class="swap__select-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="swap__dropdown" data-select-dropdown>
+            <li class="swap__option swap__option--active" data-value="USDT (ERC-20)" data-icon="images/icons/crypto/1.svg">
+              <img src="images/icons/crypto/1.svg" width="20" height="20" alt="">
+              USDT (ERC-20)
+            </li>
+            <li class="swap__option" data-value="USDT (TRC-20)" data-icon="images/icons/crypto/2.svg">
+              <img src="images/icons/crypto/2.svg" width="20" height="20" alt="">
+              USDT (TRC-20)
+            </li>
+            <li class="swap__option" data-value="Bitcoin" data-icon="images/icons/crypto/3.svg">
+              <img src="images/icons/crypto/3.svg" width="20" height="20" alt="">
+              Bitcoin
+            </li>
+            <li class="swap__option" data-value="Ethereum" data-icon="images/icons/crypto/4.svg">
+              <img src="images/icons/crypto/4.svg" width="20" height="20" alt="">
+              Ethereum
+            </li>
+            <li class="swap__option" data-value="Solana" data-icon="images/icons/crypto/5.svg">
+              <img src="images/icons/crypto/5.svg" width="20" height="20" alt="">
+              Solana
+            </li>
+            <li class="swap__option" data-value="Ripple" data-icon="images/icons/crypto/6.svg">
+              <img src="images/icons/crypto/6.svg" width="20" height="20" alt="">
+              Ripple
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="swap__field">
+      <div class="swap__input-wrap">
+        <div class="swap__input-left">
+          <label class="swap__label" for="swap-receive">You Receive</label>
+          <input
+              class="swap__input"
+              id="swap-receive"
+              type="number"
+              placeholder="Your value"
+              readonly
+          >
+        </div>
+        <div class="swap__currency">
+          <img src="images/icons/crypto/1.svg" width="20" height="20" alt="">
+          <span>₮QOR</span>
+        </div>
+      </div>
+    </div>
+    <button class="swap__btn" type="button" disabled>Swap</button>
+  </div>
+</div>
