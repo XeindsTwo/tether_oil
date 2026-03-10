@@ -1,0 +1,285 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s;
+
+  &--open {
+    opacity: 1;
+    visibility: visible;
+
+    .modal__window {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(#000, 0.36);
+  }
+
+  &__window {
+    position: relative;
+    z-index: 1;
+    background-color: $black400;
+    border-radius: 16px;
+    padding: 32px 36px;
+    width: 100%;
+    max-width: 950px;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: translateY(16px);
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+
+    @include r($tablet) {
+      padding: 24px;
+    }
+
+    @include r($sm) {
+      padding: 20px 16px;
+    }
+  }
+
+  &__close {
+    @include flex-center;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 32px;
+    height: 32px;
+    color: rgba($white, 0.5);
+    border-radius: 6px;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    transition: color 0.2s, outline-color 0.2s;
+
+    &:hover {
+      color: $white;
+    }
+
+    &:focus-visible {
+      outline-color: rgba($white, 0.4);
+    }
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 600;
+    color: $white;
+    letter-spacing: -0.56px;
+    margin-bottom: 30px;
+    padding-right: 40px;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 286px;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 28px;
+
+    @include r($tablet) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+
+  &__left {
+    max-width: 565px;
+    width: 100%;
+  }
+
+  &__section-label {
+    font-weight: 600;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+
+    strong {
+      position: relative;
+      display: inline-block;
+      color: $white;
+
+      img {
+        cursor: pointer;
+        display: inline-block;
+        margin-left: 4px;
+        vertical-align: top;
+        transition: opacity .3s;
+
+        &:hover {
+          opacity: .8;
+        }
+      }
+    }
+  }
+
+  &__summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+
+    @include r($sm) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
+
+  &__summary-item {
+    @include flex-column(10);
+    background-color: rgba($white, .04);
+    border-radius: 4px;
+    padding: 12px 14px;
+  }
+
+  &__summary-label {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.14px;
+    text-transform: uppercase;
+    color: rgba($white, 0.4);
+  }
+
+  &__summary-value {
+    @include flex-align-center(6);
+    font-size: 18px;
+    font-weight: 600;
+    color: $white;
+    letter-spacing: -0.4px;
+
+    & > span:nth-child(1) {
+      opacity: 1;
+    }
+
+    & > * {
+      opacity: 0.8;
+    }
+  }
+
+  &__address {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 18px;
+    letter-spacing: 0.18px;
+    color: $white;
+    border: 1px solid rgba($white, 0.08);
+    margin-bottom: 32px;
+  }
+
+  &__address-text {
+    flex: 1;
+    word-break: break-all;
+  }
+
+  &__copy {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+
+    &:hover {
+      svg {
+        opacity: .7;
+      }
+    }
+  }
+
+  &__hint {
+    margin-bottom: 36px;
+  }
+
+  &__steps {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__step {
+    @include flex-column(12);
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  &__step-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid rgba($white, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .modal__step--active & {
+      border: none;
+    }
+  }
+
+  &__step-spinner {
+    width: 24px;
+    height: 24px;
+    color: $white;
+    animation: spin 1.4s linear infinite;
+  }
+
+  &__step-line {
+    flex: 1;
+    height: 1px;
+    background-color: rgba($white, 0.15);
+    margin-bottom: 35px;
+  }
+
+  &__step-label {
+    white-space: nowrap;
+
+    .modal__step--active & {
+      color: $white;
+      font-weight: 600;
+    }
+  }
+
+  &__footer-text {
+    max-width: 764px;
+    letter-spacing: -0.32px;
+  }
+
+  &__right {
+    @include flex-center;
+    width: 286px;
+    height: 286px;
+
+    @include r($tablet) {
+      display: none;
+    }
+  }
+
+  &__qr {
+    border-radius: 8px;
+    display: block;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
