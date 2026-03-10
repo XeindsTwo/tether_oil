@@ -53,6 +53,10 @@
   left: 12px;
   transition: opacity 0.3s;
   pointer-events: none;
+  @include r($phone) {
+    padding: 4px 9px;
+    top: -34px;
+  }
 
   &--show {
     opacity: 1;
