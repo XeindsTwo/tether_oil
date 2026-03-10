@@ -24,11 +24,12 @@
         <span>Remaining:</span> 8.4M / 1B ₮QOR
       </p>
       <nav class="header__nav">
-        <a class="header__link" href="#">Main</a>
-        <a class="header__link" href="#">Allocation</a>
-        <button class="btn btn--blur header__btn">
+        <a class="header__link" data-smooth-scroll href="#overview">Overview</a>
+        <a class="header__link" data-smooth-scroll href="#structure">Structure</a>
+        <a class="header__link" data-smooth-scroll href="#partners">Partners</a>
+        <a class="btn btn--blur header__btn" data-smooth-scroll data-extra="true" href="#swap">
           BUY ₮QOR
-        </button>
+        </a>
       </nav>
     </div>
   </div>
@@ -49,7 +50,7 @@
       physical reserves and trading revenue into a single digital asset.
     </p>
     <div class="hero__actions">
-      <a href="#" class="btn btn--big">
+      <a href="#swap" data-smooth-scroll data-extra="true" class="btn btn--big">
         Buy
         <svg class="btn__icon" width="34" height="32" viewBox="0 0 34 32" fill="none"
              xmlns="http://www.w3.org/2000/svg">
@@ -59,7 +60,7 @@
         </svg>
         TQOR
       </a>
-      <a href="#" class="btn btn--blur btn--big">
+      <a href="whitepaper.pdf" target="_blank" class="btn btn--blur btn--big">
         Whitepaper
       </a>
     </div>
@@ -79,7 +80,7 @@
     </ul>
   </section>
 </div>
-  <section class="reserve">
+  <section class="reserve" id="overview">
   <div class="container">
     <div class="reserve__top">
       <ul class="reserve__tags">
@@ -91,7 +92,7 @@
           Demand-Driven Token Appreciation
         </li>
       </ul>
-      <a class="link-more" href="#">Learn more in whitepaper</a>
+      <a class="link-more" href="whitepaper.pdf" target="_blank">Learn more in whitepaper</a>
     </div>
     <h2 class="reserve__title">
       The Architecture Behind
@@ -215,14 +216,14 @@
   </div>
 </section>
 
-  <section class="mechanics">
+  <section class="mechanics" id="structure">
   <div class="container mechanics__container">
     <div class="mechanics__top">
       <h2 class="mechanics__title">
         <img src="images/icons/tether-white.svg" width="39" height="38" alt="Tether white">
         TQOR Token Mechanics
       </h2>
-      <a class="link-more" href="#">Learn more in whitepaper</a>
+      <a class="link-more" href="whitepaper.pdf" target="_blank">Learn more in whitepaper</a>
     </div>
     <div class="mechanics__grid mechanics__grid_row_top">
       <article class="mechanics__item mechanics__item_type_distribution">
@@ -324,7 +325,7 @@
   </div>
 </section>
 
-  <section class="partners">
+  <section class="partners" id="partners">
   <div class="container">
     <div class="partners__inner">
       <h2 class="partners__title">Verification & Institutional Infrastructure</h2>
@@ -406,7 +407,7 @@
       </div>
 
       <div class="buy__right">
-        <div class="swap">
+        <div class="swap" id="swap">
   <div class="swap__header">
     <p class="swap__remaining">
       Remaining
@@ -500,14 +501,11 @@
 
   <section class="faq">
   <div class="container">
-
     <div class="faq__top">
       <h2 class="faq__title">Frequently Asked Questions</h2>
-      <a class="link-more" href="#">Learn more in whitepaper</a>
+      <a class="link-more" href="whitepaper.pdf" target="_blank">Learn more in whitepaper</a>
     </div>
-
     <ul class="faq__list">
-
       <li class="faq__item">
         <button class="faq__question" type="button">
           <span>What is TQOR?</span>
@@ -517,7 +515,6 @@
           <p class="faq__answer-text">TQOR is a tokenized energy reserve backed by physical oil assets, production royalties and commodity trading operations. The token provides exposure to the global oil market while distributing real-time yield to holders.</p>
         </div>
       </li>
-
       <li class="faq__item">
         <button class="faq__question" type="button">
           <span>How does TQOR generate yield?</span>
@@ -527,7 +524,6 @@
           <p class="faq__answer-text">Yield is generated from three sources: production royalties from oil fields; profits from commodity trading strategies; appreciation of physical oil reserves. Revenue is distributed to token holders through the Streaming Yield Protocol.</p>
         </div>
       </li>
-
       <li class="faq__item">
         <button class="faq__question" type="button">
           <span>Do I need to stake my tokens?</span>
@@ -537,7 +533,6 @@
           <p class="faq__answer-text long">No staking is required. Yield accrues automatically to any wallet holding TQOR, with no lock-up period and no minimum balance.</p>
         </div>
       </li>
-
       <li class="faq__item">
         <button class="faq__question" type="button">
           <span>Can I redeem TQOR for its underlying value?</span>
@@ -547,7 +542,6 @@
           <p class="faq__answer-text long">Yes. TQOR tokens can be burned to redeem their proportional share of the fund's net asset value (NAV) in USDT at any time.</p>
         </div>
       </li>
-
       <li class="faq__item">
         <button class="faq__question" type="button">
           <span>How can I buy TQOR?</span>
@@ -557,7 +551,6 @@
           <p class="faq__answer-text">TQOR can be purchased directly on the platform using BTC, ETH, XRP or USDT. Once the transaction is confirmed, tokens are allocated to your account and begin generating yield immediately.</p>
         </div>
       </li>
-
       <li class="faq__item">
         <button class="faq__question" type="button">
           <span>Where can I read the full documentation?</span>
@@ -567,9 +560,7 @@
           <p class="faq__answer-text">The full technical documentation and economic model are available in the official TQOR whitepaper.</p>
         </div>
       </li>
-
     </ul>
-
   </div>
 </section>
 
@@ -583,12 +574,12 @@
       </div>
       <div class="footer__right">
         <nav class="footer__nav">
-          <a class="footer__nav-link" href="#">Overview</a>
-          <a class="footer__nav-link" href="#">Structure</a>
-          <a class="footer__nav-link" href="#">Partners</a>
+          <a class="footer__nav-link" data-smooth-scroll data-extra="false" href="#overview">Overview</a>
+          <a class="footer__nav-link" data-smooth-scroll data-extra="false" href="#structure">Structure</a>
+          <a class="footer__nav-link" data-smooth-scroll data-extra="false" href="#partners">Partners</a>
           <a class="footer__btn btn btn--blur mobile" href="#">Buy ₮QOR</a>
         </nav>
-        <a class="footer__btn btn btn--blur" href="#">Buy ₮QOR</a>
+        <a class="footer__btn btn btn--blur" data-smooth-scroll href="#swap">Buy ₮QOR</a>
       </div>
       <p class="footer__copy mobile">₮QOR. All rights reserved © 2026</p>
     </div>
@@ -690,6 +681,7 @@
   </div>
 </div>
 
+<script src="js/main.js"></script>
 <script src="js/faq.js"></script>
 <script src="js/swap.js"></script>
 </body>

@@ -9,17 +9,14 @@
 
   &__inner {
     @include flex-between-center-gap(30);
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: -0.18px;
-    @include r($tablet) {
-      font-size: 16px;
-    }
   }
 
   &__logo, &__nav {
     display: flex;
     justify-content: flex-end;
-    max-width: 300px;
+    max-width: 380px;
     width: 100%;
     @include r($lg) {
       max-width: 200px;
@@ -74,8 +71,8 @@
       outline-color: $white;
     }
 
-    &:nth-child(1), &:nth-child(2) {
-      @include r($lg) {
+    &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+      @media (max-width: 1100px) {
         display: none;
       }
     }
